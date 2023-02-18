@@ -74,7 +74,11 @@ echo "*         ADDRESS BOOK SYSTEM         *"
 echo "*                                     *"
 echo "***************************************"
 
-while [ "${cmd}" != "end" ]; do
+while :; do
     read -p ">>> " cmd
+    if [ "${cmd}" = "end" ]; then
+        break
+    fi
+    
     ${cmd}
 done
